@@ -32,6 +32,7 @@ public class EnemyAI : MonoBehaviour
         ChaseUpdate();
 
         PatrolUpdate();
+
     }
     private void ChaseUpdate()
     {

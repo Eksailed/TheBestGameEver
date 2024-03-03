@@ -54,16 +54,6 @@ public class PlayerController : MonoBehaviour
             speed = 2;
         }
 
-        //if (_moveVector != Vector3.zero)
-        //{
-        //    animator.SetBool("isRun", true);
-        //}
-        //else
-        //{
-        //    animator.SetBool("isRun", false);
-        //}
-
-
         //JUMP
         if (Input.GetKeyDown(KeyCode.Space) && _characterController.isGrounded)
         {

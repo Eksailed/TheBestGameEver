@@ -1656,6 +1656,7 @@ GameObject:
   - component: {fileID: 1957008189}
   - component: {fileID: 1957008190}
   - component: {fileID: 1957008191}
+  - component: {fileID: 1957008192}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -1719,6 +1720,20 @@ MonoBehaviour:
   - {fileID: 564392949}
   player: {fileID: 1678749502}
   viewAngle: 85
+--- !u!136 &1957008192
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957008188}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.46
+  m_Height: 2.07
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.97, z: 0}
 --- !u!1 &1978514574
 GameObject:
   m_ObjectHideFlags: 0
@@ -1942,6 +1957,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1857669969583579117, guid: b0dd673f280d011419c0da5507dc5ba8,
+        type: 3}
+      propertyPath: fireballprefab
+      value: 
+      objectReference: {fileID: 849354918190731487, guid: 74248269e57e0f84a95e711588fb5865,
+        type: 3}
+    - target: {fileID: 5735215075217589369, guid: b0dd673f280d011419c0da5507dc5ba8,
+        type: 3}
+      propertyPath: gravity
+      value: 9.39
+      objectReference: {fileID: 0}
     - target: {fileID: 5735215075217589370, guid: b0dd673f280d011419c0da5507dc5ba8,
         type: 3}
       propertyPath: m_RootOrder
@@ -2006,6 +2032,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Center.y
       value: 1.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735215075217589375, guid: b0dd673f280d011419c0da5507dc5ba8,
+        type: 3}
+      propertyPath: m_SlopeLimit
+      value: 45.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 7965694537939847839, guid: b0dd673f280d011419c0da5507dc5ba8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.241
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0dd673f280d011419c0da5507dc5ba8, type: 3}
