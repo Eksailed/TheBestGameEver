@@ -8,11 +8,13 @@ public class PlayerController : MonoBehaviour
     public float gravity = 9.8f;
     public float speed;
     public float jumpForce;
-    
-    
+
+    public Transform Gun;
+
     private float _fallVelocity = 0;
     private CharacterController _characterController;
     private Vector3 _moveVector;
+
     
 
     
@@ -26,45 +28,67 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //MOVE
+        MoveUpdate();
+
+        //JUMP
+        JumpUpdate();
+
+    }
+    private void MoveUpdate()
+    {
         _moveVector = Vector3.zero;
-        animator.SetFloat("speed", 0);
+        var runDirection = 0;
+        Gun.gameObject.SetActive(false);
 
         if (Input.GetKey(KeyCode.W))
         {
             _moveVector += transform.forward;
-            animator.SetFloat("speed", 1);
+            runDirection = 1;
+            Gun.gameObject.SetActive(true);
         }
         if (Input.GetKey(KeyCode.S))
         {
             _moveVector -= transform.forward;
-            animator.SetFloat("speed", -1);
-;        }
+            runDirection = 2;
+            Gun.gameObject.SetActive(true);
+        }
         if (Input.GetKey(KeyCode.A))
         {
             _moveVector -= transform.right;
+            runDirection = 3;
+            Gun.gameObject.SetActive(true);
         }
         if (Input.GetKey(KeyCode.D))
         {
             _moveVector += transform.right;
+            runDirection = 4;
+            Gun.gameObject.SetActive(true);
         }
         if (Input.GetKey(KeyCode.LeftShift))
         {
             speed = 4;
+            Gun.gameObject.SetActive(true);
         }
         else
         {
             speed = 2;
+            Gun.gameObject.SetActive(true);
         }
 
-        //JUMP
+        animator.SetInteger("run direction", runDirection);
+    }
+
+
+    private void JumpUpdate()
+    {
         if (Input.GetKeyDown(KeyCode.Space) && _characterController.isGrounded)
         {
             _fallVelocity = -jumpForce;
-            animator.SetBool("IsGrounded", false);
+            //animator.SetBool("IsGrounded", false);
         }
-        
     }
 
+    
 
     void FixedUpdate()
     {
@@ -76,11 +100,11 @@ public class PlayerController : MonoBehaviour
         _characterController.Move(Vector3.down * _fallVelocity * Time.fixedDeltaTime);
 
         //Stop fall on ground
-        if (_characterController.isGrounded)
-        {
-            animator.SetBool("IsGrounded", true);
-            _fallVelocity = 0;
+        //if (_characterController.isGrounded)
+        //{
+        //    animator.SetBool("IsGrounded", true);
+        //    _fallVelocity = 0;
             
-        }
+        //}
     }
 }
