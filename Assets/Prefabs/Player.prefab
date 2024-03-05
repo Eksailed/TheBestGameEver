@@ -367,6 +367,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1710107131297586843}
+  - component: {fileID: 2575821748998527939}
   m_Layer: 5
   m_Name: Game over screen
   m_TagString: Untagged
@@ -396,6 +397,18 @@ RectTransform:
   m_AnchoredPosition: {x: -0.0014038086, y: 0.000030517578}
   m_SizeDelta: {x: 0.67163086, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2575821748998527939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659548964976790480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f508c39a47fd9047bb6c3540d9f7da0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2362583925876447378
 GameObject:
   m_ObjectHideFlags: 0
@@ -932,8 +945,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CameraAxisTransform: {fileID: 5735215073524731282}
   RotationSpeed: 400
-  minAngle: -25
-  maxAngle: 15
+  minAngle: -40
+  maxAngle: 40
 --- !u!114 &5735215075217589369
 MonoBehaviour:
   m_ObjectHideFlags: 0

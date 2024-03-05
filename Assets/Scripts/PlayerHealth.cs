@@ -16,13 +16,19 @@ public class PlayerHealth : MonoBehaviour
         value -= damage; 
         if (value <= 0)
         {
-            gameplayUI.SetActive(false);
-            gameOverScreen.SetActive(true);
+            PlayerIsDead();
         }
 
         DrawHealthBar();
     }
-
+    private void PlayerIsDead()
+    {
+        gameplayUI.SetActive(false);
+        gameOverScreen.SetActive(true);
+        GetComponent<PlayerController>().enabled = false;
+        GetComponent<FireballCast>().enabled = false;
+        GetComponent<CameraRotation>().enabled = false;
+    }
     private void DrawHealthBar()
     {
         valueRectTransform.anchorMax = new Vector2(value / _maxvalue, 1);
