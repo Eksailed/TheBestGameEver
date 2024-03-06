@@ -7,12 +7,19 @@ public class PlayerHealth : MonoBehaviour
     public float value = 100;
     public RectTransform valueRectTransform;
 
+
     public GameObject gameplayUI;
     public GameObject gameOverScreen;
 
     public Animator animator;
 
     private float _maxvalue;
+
+    public bool IsAlive()
+    {
+        return value > 0;
+    }
+
     public void DealDamage(float damage)
     {
         value -= damage; 
