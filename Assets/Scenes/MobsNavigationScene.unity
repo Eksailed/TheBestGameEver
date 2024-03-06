@@ -907,6 +907,31 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1255490999}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1262089420 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1659548964976790480, guid: b0dd673f280d011419c0da5507dc5ba8,
+    type: 3}
+  m_PrefabInstance: {fileID: 2055847253}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1262089423
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262089420}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eb5541e6b7cd31641aeda84618998e11, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1276797246
 GameObject:
   m_ObjectHideFlags: 0
@@ -2144,6 +2169,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1589215168836079749, guid: b0dd673f280d011419c0da5507dc5ba8,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 16777215
+      objectReference: {fileID: 0}
+    - target: {fileID: 1659548964976790480, guid: b0dd673f280d011419c0da5507dc5ba8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1710107131297586843, guid: b0dd673f280d011419c0da5507dc5ba8,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2184,6 +2219,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4101816991261001101, guid: b0dd673f280d011419c0da5507dc5ba8,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 15724543
       objectReference: {fileID: 0}
     - target: {fileID: 4651172563759349308, guid: b0dd673f280d011419c0da5507dc5ba8,
         type: 3}
