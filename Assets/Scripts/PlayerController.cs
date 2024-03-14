@@ -55,13 +55,13 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             _moveVector -= transform.right;
-            runDirection = 3;
+            runDirection = 4;
             Gun.gameObject.SetActive(true);
         }
         if (Input.GetKey(KeyCode.D))
         {
             _moveVector += transform.right;
-            runDirection = 4;
+            runDirection = 3;
             Gun.gameObject.SetActive(true);
         }
         if (Input.GetKey(KeyCode.LeftShift))
@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && _characterController.isGrounded)
         {
             _fallVelocity = -jumpForce;
-            //animator.SetBool("IsGrounded", false);
+            animator.SetBool("IsGrounded", false);
         }
     }
 
@@ -100,11 +100,11 @@ public class PlayerController : MonoBehaviour
         _characterController.Move(Vector3.down * _fallVelocity * Time.fixedDeltaTime);
 
         //Stop fall on ground
-        //if (_characterController.isGrounded)
-        //{
-        //    animator.SetBool("IsGrounded", true);
-        //    _fallVelocity = 0;
-            
-        //}
+        if (_characterController.isGrounded)
+        {
+            animator.SetBool("IsGrounded", true);
+            _fallVelocity = 0;
+
+        }
     }
 }

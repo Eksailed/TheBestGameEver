@@ -5,12 +5,11 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public float value = 100;
+
     public RectTransform valueRectTransform;
-
-
     public GameObject gameplayUI;
-    public GameObject gameOverScreen;
 
+    public GameObject gameOverScreen;
     public Animator animator;
 
     private float _maxvalue;
@@ -27,9 +26,17 @@ public class PlayerHealth : MonoBehaviour
         {
             PlayerIsDead();
         }
-
         DrawHealthBar();
     }
+
+    public void AddHealth(float amount)
+    {
+        value += amount;
+        value = Mathf.Clamp(value, 0, _maxvalue);
+        DrawHealthBar();
+    }
+
+
     private void PlayerIsDead()
     {
         gameplayUI.SetActive(false);
