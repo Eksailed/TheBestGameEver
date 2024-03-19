@@ -19,8 +19,12 @@ public class EnemyAI : MonoBehaviour
     private NavMeshAgent _navMeshAgent;
     private bool _isPlayerNoticed;
     private PlayerHealth _playerhealth;
+    private EnemyHealth _enemyhealth;
 
-
+    public bool IsAlive()
+    {
+        return _enemyhealth.IsAlive();
+    }
     void Start()
     {
         InitComponentLinks();
@@ -31,6 +35,7 @@ public class EnemyAI : MonoBehaviour
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _playerhealth = player.GetComponent<PlayerHealth>();
+        _enemyhealth = GetComponent<EnemyHealth>();
     }
 
 

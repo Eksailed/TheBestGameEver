@@ -10,6 +10,10 @@ public class EnemyHealth : MonoBehaviour
 
     public Animator zombieanimator;
     //public Animator zombieanimator2;
+    public bool IsAlive()
+    {
+        return value > 0;
+    }
 
     public void DealDamage(float damage)
     {
@@ -25,6 +29,8 @@ public class EnemyHealth : MonoBehaviour
             //zombieanimator2.SetTrigger("hit");
         }
     }
+
+
 
     private void EnemyDeath()
     {
