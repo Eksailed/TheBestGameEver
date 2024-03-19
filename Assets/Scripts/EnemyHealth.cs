@@ -7,7 +7,8 @@ using UnityEngine.AI;
 public class EnemyHealth : MonoBehaviour
 {
     public float value = 100;
-    public Animator animator;
+    //public Animator animator;
+    public Animator zombieanimator;
 
     public void DealDamage(float damage)
     {
@@ -19,27 +20,17 @@ public class EnemyHealth : MonoBehaviour
         }
         else
         {
-            animator.SetTrigger("hit");
+            zombieanimator.SetTrigger("hit");
+            //animator.SetTrigger("hit");
         }
     }
 
     private void EnemyDeath()
-    { 
-        animator.SetTrigger("death");
+    {
+        zombieanimator.SetTrigger("death");
+        //animator.SetTrigger("death");
         GetComponent<EnemyAI>().enabled = false;
         GetComponent<NavMeshAgent>().enabled = false;
         GetComponent<CapsuleCollider>().enabled = false;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
