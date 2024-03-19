@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
 
     public RectTransform valueRectTransform;
     public GameObject gameplayUI;
+    public GameObject HealEffect;
 
     public GameObject gameOverScreen;
     public Animator animator;
@@ -18,7 +19,6 @@ public class PlayerHealth : MonoBehaviour
     {
         return value > 0;
     }
-
     public void DealDamage(float damage)
     {
         value -= damage; 
@@ -33,6 +33,7 @@ public class PlayerHealth : MonoBehaviour
     {
         value += amount;
         value = Mathf.Clamp(value, 0, _maxvalue);
+        HealEffect.GetComponent<ParticleSystem>().Play();
         DrawHealthBar();
     }
 

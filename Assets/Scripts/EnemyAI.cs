@@ -10,8 +10,9 @@ public class EnemyAI : MonoBehaviour
     public float viewAngle;
     public float damage = 30;
 
-    //public Animator animator;
+ 
     public Animator Zombieanimator;
+    //public Animator ZombieanimatorTWO;
 
     public float attackDistance = 1;
 
@@ -52,7 +53,7 @@ public class EnemyAI : MonoBehaviour
             if (_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance)
             {
                 Zombieanimator.SetTrigger("attack");
-                //animator.SetTrigger("attack");
+                //ZombieanimatorTWO.SetTrigger("attack");
             }
         }
     }

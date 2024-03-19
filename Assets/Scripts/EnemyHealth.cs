@@ -7,8 +7,9 @@ using UnityEngine.AI;
 public class EnemyHealth : MonoBehaviour
 {
     public float value = 100;
-    //public Animator animator;
+
     public Animator zombieanimator;
+    //public Animator zombieanimator2;
 
     public void DealDamage(float damage)
     {
@@ -21,14 +22,14 @@ public class EnemyHealth : MonoBehaviour
         else
         {
             zombieanimator.SetTrigger("hit");
-            //animator.SetTrigger("hit");
+            //zombieanimator2.SetTrigger("hit");
         }
     }
 
     private void EnemyDeath()
     {
         zombieanimator.SetTrigger("death");
-        //animator.SetTrigger("death");
+        //zombieanimator2.SetTrigger("death");
         GetComponent<EnemyAI>().enabled = false;
         GetComponent<NavMeshAgent>().enabled = false;
         GetComponent<CapsuleCollider>().enabled = false;
