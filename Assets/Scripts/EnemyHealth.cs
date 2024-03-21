@@ -7,9 +7,15 @@ using UnityEngine.AI;
 public class EnemyHealth : MonoBehaviour
 {
     public float value = 100;
+    public float Point = 10;
 
     public Animator zombieanimator;
-    //public Animator zombieanimator2;
+
+    public PlayerProgress playerProgress;
+    private void Start()
+    {
+        playerProgress = FindObjectOfType<PlayerProgress>();
+    }
     public bool IsAlive()
     {
         return value > 0;
@@ -17,6 +23,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void DealDamage(float damage)
     {
+        playerProgress.AddExperience(damage);
         value -= damage;
         if (value <= 0)
         {
@@ -26,7 +33,6 @@ public class EnemyHealth : MonoBehaviour
         else
         {
             zombieanimator.SetTrigger("hit");
-            //zombieanimator2.SetTrigger("hit");
         }
     }
 

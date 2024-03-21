@@ -99,9 +99,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.46
-  m_Height: 2.07
+  m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0.19, z: 0}
+  m_Center: {x: 0, y: 0.92, z: 0}
 --- !u!114 &7202836036802601538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,7 +115,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 100
+  Point: 10
   zombieanimator: {fileID: 7107886837165152720}
+  playerProgress: {fileID: 0}
 --- !u!1001 &7202836037872494880
 PrefabInstance:
   m_ObjectHideFlags: 0
