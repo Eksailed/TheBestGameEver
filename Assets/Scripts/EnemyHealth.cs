@@ -41,7 +41,6 @@ public class EnemyHealth : MonoBehaviour
     private void EnemyDeath()
     {
         zombieanimator.SetTrigger("death");
-        //zombieanimator2.SetTrigger("death");
         GetComponent<EnemyAI>().enabled = false;
         GetComponent<NavMeshAgent>().enabled = false;
         GetComponent<CapsuleCollider>().enabled = false;

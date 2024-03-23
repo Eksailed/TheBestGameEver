@@ -12,7 +12,6 @@ public class EnemyAI : MonoBehaviour
 
  
     public Animator Zombieanimator;
-    //public Animator ZombieanimatorTWO;
 
     public float attackDistance = 1;
 
@@ -42,6 +41,8 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
+        if (!_navMeshAgent.enabled) return;
+
         NoticePlayerUpdate();
 
         ChaseUpdate();
@@ -58,7 +59,6 @@ public class EnemyAI : MonoBehaviour
             if (_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance)
             {
                 Zombieanimator.SetTrigger("attack");
-                //ZombieanimatorTWO.SetTrigger("attack");
             }
         }
     }
@@ -66,7 +66,7 @@ public class EnemyAI : MonoBehaviour
     public void AttackDamage()
     {
         if (!_isPlayerNoticed) return;
-        if (_navMeshAgent.remainingDistance > _navMeshAgent.stoppingDistance + attackDistance) return;
+        if (_navMeshAgent.enabled && _navMeshAgent.remainingDistance > _navMeshAgent.stoppingDistance + attackDistance) return;
 
         _playerhealth.DealDamage(damage);
     }
