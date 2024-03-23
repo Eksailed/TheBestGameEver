@@ -20,8 +20,6 @@ public class PlayerController : MonoBehaviour
     
     void Start()
     {
-        //Cursor.lockState = CursorLockMode.Locked;
-        //Cursor.visible = false;
         _characterController = GetComponent<CharacterController>();
     }
 
@@ -38,43 +36,40 @@ public class PlayerController : MonoBehaviour
     {
         _moveVector = Vector3.zero;
         var runDirection = 0;
-        Gun.gameObject.SetActive(false);
 
         if (Input.GetKey(KeyCode.W))
         {
+            AudioManager.instance.Play("PeopleCome");
             _moveVector += transform.forward;
             runDirection = 1;
-            Gun.gameObject.SetActive(true);
         }
         if (Input.GetKey(KeyCode.S))
         {
+            AudioManager.instance.Play("PeopleCome");
             _moveVector -= transform.forward;
             runDirection = 2;
-            Gun.gameObject.SetActive(true);
         }
         if (Input.GetKey(KeyCode.A))
         {
+            AudioManager.instance.Play("PeopleCome");
             _moveVector -= transform.right;
             runDirection = 4;
-            Gun.gameObject.SetActive(true);
         }
         if (Input.GetKey(KeyCode.D))
         {
+            AudioManager.instance.Play("PeopleCome");
             _moveVector += transform.right;
             runDirection = 3;
-            Gun.gameObject.SetActive(true);
         }
         if (Input.GetKey(KeyCode.LeftShift))
         {
             speed = 4;
-            Gun.gameObject.SetActive(true);
         }
         else
         {
             speed = 2;
-            Gun.gameObject.SetActive(true);
         }
-
+        AudioManager.instance.Stop("PeopleCome");
         animator.SetInteger("run direction", runDirection);
     }
 
@@ -84,6 +79,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && _characterController.isGrounded)
         {
             _fallVelocity = -jumpForce;
+            AudioManager.instance.Play("PeopleJump");
             animator.SetBool("IsGrounded", false);
         }
     }

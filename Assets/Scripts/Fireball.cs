@@ -7,13 +7,11 @@ public class Fireball : MonoBehaviour
     public float speed;
     public float lifetime;
     public float damage = 10;
-    // Start is called before the first frame update
+
     void Start()
     {
         Invoke("DestroyFireball", lifetime);
     }
-
-    // Update is called once per frame
     void FixedUpdate()
     {
         MoveFixedUpdate();

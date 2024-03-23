@@ -29,6 +29,7 @@ public class PauseMenu : MonoBehaviour
         pauseGameMenu.SetActive(false);
         Time.timeScale = 1f;
         PauseGame = false;
+        AudioManager.instance.Play("Background");
     }
 
     public void Pause()
@@ -36,6 +37,7 @@ public class PauseMenu : MonoBehaviour
         pauseGameMenu.SetActive(true);
         Time.timeScale = 0f;
         PauseGame = true;
+        AudioManager.instance.Stop("Background");
     }
 
     public void LoadMenu()

@@ -15,8 +15,20 @@ public class FireballCast : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
+            AudioManager.instance.Play("ShootPlayer");
             var fireball = Instantiate(fireballprefab, fireballSourceTransform.position, fireballSourceTransform.rotation);
             fireball.damage = damage;
         }
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    Cursor.visible = true;
+        //}
+        //else
+        //{
+        //    Cursor.lockState = CursorLockMode.Confined;
+        //    Cursor.visible = true;
+        //}
     }
 }

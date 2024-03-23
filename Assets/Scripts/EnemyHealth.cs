@@ -32,6 +32,7 @@ public class EnemyHealth : MonoBehaviour
         }
         else
         {
+            AudioManager.instance.Play("ZombieHit");
             zombieanimator.SetTrigger("hit");
         }
     }

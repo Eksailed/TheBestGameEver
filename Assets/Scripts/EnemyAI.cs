@@ -26,6 +26,7 @@ public class EnemyAI : MonoBehaviour
     }
     void Start()
     {
+        //AudioManager.instance.Play("ZombieCome");
         InitComponentLinks();
         PickNewPatrolPoint();       
     }
@@ -41,6 +42,7 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
+        
         if (!_navMeshAgent.enabled) return;
 
         NoticePlayerUpdate();
@@ -58,6 +60,7 @@ public class EnemyAI : MonoBehaviour
         {
             if (_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance)
             {
+
                 Zombieanimator.SetTrigger("attack");
             }
         }
@@ -68,6 +71,7 @@ public class EnemyAI : MonoBehaviour
         if (!_isPlayerNoticed) return;
         if (_navMeshAgent.enabled && _navMeshAgent.remainingDistance > _navMeshAgent.stoppingDistance + attackDistance) return;
 
+        AudioManager.instance.Play("UdarZombie");
         _playerhealth.DealDamage(damage);
     }
 
